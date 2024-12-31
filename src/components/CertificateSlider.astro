@@ -1,0 +1,88 @@
+---
+import { Image } from 'astro:assets';
+---
+
+<div class="certificate-slider">
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <Image src="/certificates/az_104.JPG" alt="Microsoft Azure Administrator Certificate" width={800} height={600} />
+      </div>
+      <div class="swiper-slide">
+        <Image src="/certificates/Capture.JPG" alt="Professional Certificate" width={800} height={600} />
+      </div>
+      <div class="swiper-slide">
+        <Image src="/certificates/Capture2.JPG" alt="Technical Certificate" width={800} height={600} />
+      </div>
+      <div class="swiper-slide">
+        <Image src="/certificates/Capture3.JPG" alt="Training Certificate" width={800} height={600} />
+      </div>
+      <div class="swiper-slide">
+        <Image src="/certificates/Capture4.JPG" alt="Achievement Certificate" width={800} height={600} />
+      </div>
+      <div class="swiper-slide">
+        <Image src="/certificates/Capture5.JPG" alt="Professional Development Certificate" width={800} height={600} />
+      </div>
+      <div class="swiper-slide">
+        <Image src="/certificates/Capture6.JPG" alt="Skills Certificate" width={800} height={600} />
+      </div>
+      <div class="swiper-slide">
+        <Image src="/certificates/Capture7.JPG" alt="Training Completion Certificate" width={800} height={600} />
+      </div>
+      <div class="swiper-slide">
+        <Image src="/certificates/git.jpg" alt="Git and GitHub Certificate" width={800} height={600} />
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</div>
+
+<script>
+  import Swiper from 'swiper';
+  import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+  import 'swiper/css/pagination';
+
+  new Swiper('.swiper', {
+    modules: [Navigation, Pagination, Autoplay],
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
+
+<style>
+  .certificate-slider {
+    margin: 2rem 0;
+  }
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .swiper-slide img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+</style>

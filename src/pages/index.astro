@@ -1,0 +1,97 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactHeader from '../components/ContactHeader.astro';
+import SkillCard from '../components/SkillCard.astro';
+import ExperienceCard from '../components/ExperienceCard.astro';
+import CertificateSlider from '../components/CertificateSlider.astro';
+import ProfileSection from '../components/ProfileSection.astro';
+---
+
+<Layout title="Gourab Paul - Professional Portfolio">
+	<main>
+		<div class="hero">
+			<div class="container">
+				<h1>Gourab Paul</h1>
+				<p class="subtitle">CCNA | AWS | AZURE | Cloud Services | Network Security</p>
+			</div>
+		</div>
+
+		<div class="container">
+			<ContactHeader />
+			
+			<section class="section">
+				<ProfileSection />
+			</section>
+
+			<section class="section">
+				<h2>Skills</h2>
+				<div class="skills-grid">
+					<SkillCard 
+						title="Cloud & Infrastructure"
+						items={["AWS", "Azure", "Linux", "Windows Server"]}
+					/>
+					<SkillCard 
+						title="Networking"
+						items={["CCNA", "Cisco", "Network Security", "Firewalls"]}
+					/>
+					<SkillCard 
+						title="Programming"
+						items={["Python", "C++", "Java", "Go"]}
+					/>
+					<SkillCard 
+						title="Web Development"
+						items={["Flask", "WordPress", "Apache", "Nginx"]}
+					/>
+				</div>
+			</section>
+
+			<section class="section">
+				<h2>Experience</h2>
+				<ExperienceCard
+					title="System Integration Engineer"
+					company="Attrabit ICT Solution"
+					period="June 2023 - Present"
+					location="Baridhara, Dhaka"
+					responsibilities={[
+						"Configured and managed Cisco Switches, Routers, Firewalls, Access Points, and Windows Server for seamless office connectivity.",
+						"Deployed and maintained Linux servers on AWS EC2 and Azure Virtual Machines.",
+						"Managed web servers (Apache, Nginx, Tomcat) and utilized Cloudflare, GoDaddy, and NameCheap.",
+						"Enhanced operational efficiency by researching cost-effective solutions.",
+						"Configured and maintained secure network solutions.",
+						"Developed and deployed scalable applications on AWS and Azure platforms.",
+						"Translated Japanese content and provided localization services."
+					]}
+				/>
+			</section>
+
+			<section class="section">
+				<h2>Certifications</h2>
+				<CertificateSlider />
+			</section>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	.hero {
+		background: var(--primary);
+		color: white;
+		padding: 4rem 0;
+		margin-bottom: 2rem;
+	}
+	.hero h1 {
+		color: white;
+		margin: 0;
+		font-size: 2.5rem;
+	}
+	.subtitle {
+		font-size: 1.2rem;
+		margin: 0.5rem 0 0 0;
+		opacity: 0.9;
+	}
+	.skills-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1rem;
+	}
+</style>

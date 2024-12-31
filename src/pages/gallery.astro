@@ -1,0 +1,108 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+const certificates = [
+  {
+    title: "Microsoft Azure Administrator Associate",
+    image: "/certificates/az_104.JPG",
+    date: "June 8, 2024"
+  },
+  {
+    title: "Professional Certificate",
+    image: "/certificates/Capture.JPG",
+    date: "2023"
+  },
+  {
+    title: "Technical Certificate",
+    image: "/certificates/Capture2.JPG",
+    date: "2023"
+  },
+  {
+    title: "Training Certificate",
+    image: "/certificates/Capture3.JPG",
+    date: "2023"
+  },
+  {
+    title: "Achievement Certificate",
+    image: "/certificates/Capture4.JPG",
+    date: "2023"
+  },
+  {
+    title: "Professional Development",
+    image: "/certificates/Capture5.JPG",
+    date: "2023"
+  },
+  {
+    title: "Skills Certificate",
+    image: "/certificates/Capture6.JPG",
+    date: "2023"
+  },
+  {
+    title: "Training Completion",
+    image: "/certificates/Capture7.JPG",
+    date: "2023"
+  },
+  {
+    title: "Git and GitHub",
+    image: "/certificates/git.jpg",
+    date: "2023"
+  }
+];
+---
+
+<Layout title="Certificate Gallery - Gourab Paul">
+  <main class="container">
+    <h1 class="gallery-title">My Certifications</h1>
+    <div class="gallery-grid">
+      {certificates.map(cert => (
+        <div class="gallery-item">
+          <Image src={cert.image} alt={cert.title} width={800} height={600} />
+          <div class="cert-info">
+            <h3>{cert.title}</h3>
+            <p>Completed: {cert.date}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .gallery-title {
+    text-align: center;
+    margin: 2rem 0;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+  .gallery-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  .gallery-item:hover {
+    transform: translateY(-5px);
+  }
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+  }
+  .cert-info {
+    padding: 1rem;
+  }
+  .cert-info h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+  }
+  .cert-info p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+  }
+</style>

@@ -1,0 +1,52 @@
+---
+interface Props {
+	title: string;
+	company: string;
+	period: string;
+	location: string;
+	responsibilities: string[];
+}
+
+const { title, company, period, location, responsibilities } = Astro.props;
+---
+
+<div class="experience-card">
+	<div class="header">
+		<h3>{title}</h3>
+		<p class="company">{company}</p>
+		<p class="meta">{period} | {location}</p>
+	</div>
+	<ul>
+		{responsibilities.map(item => <li>{item}</li>)}
+	</ul>
+</div>
+
+<style>
+	.experience-card {
+		background: white;
+		padding: 1.5rem;
+		border-radius: 8px;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+		margin-bottom: 1.5rem;
+	}
+	.header {
+		margin-bottom: 1rem;
+	}
+	.company {
+		color: var(--primary);
+		font-weight: bold;
+		margin: 0.5rem 0;
+	}
+	.meta {
+		color: #666;
+		font-size: 0.9rem;
+		margin: 0;
+	}
+	ul {
+		margin: 0;
+		padding-left: 1.2rem;
+	}
+	li {
+		margin-bottom: 0.5rem;
+	}
+</style>

@@ -1,0 +1,24 @@
+---
+import { Image } from 'astro:assets';
+---
+
+<div class="profile-image">
+  <Image 
+    src="/certificates/gourab.jpg" 
+    alt="Gourab Paul" 
+    width={200} 
+    height={200}
+    class="rounded-image"
+  />
+</div>
+
+<style>
+  .profile-image {
+    flex-shrink: 0;
+  }
+  .rounded-image {
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+  }
+</style>
